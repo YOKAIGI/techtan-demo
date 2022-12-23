@@ -25,8 +25,6 @@ class Light {
       } else if (lightColor == "BLUE") {
         playerSpeed = 2;
       }
-
-      setCode(lightColor);
     }
   }
 }

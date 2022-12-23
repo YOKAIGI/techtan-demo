@@ -23,16 +23,20 @@ function handlePlay() {
 }
 
 function handleReload() {
+  lightColor = "RED";
+  playerSpeed = 0;
+  playerPosition = 0;
   console.log("Reload Button Clicked!");
 }
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
-  setCode();
 
   redLight = new Light(width / 2, (height * 1) / 4, "RED");
   blueLight = new Light(width / 2, (height * 3) / 4, "BLUE");
+
+  setCode(lightColor);
 }
 
 function draw() {
