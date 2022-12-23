@@ -1,4 +1,11 @@
 #canvas {
   width: 100vw;
-  height: 100vh;
+  height: 100vw;
+}
+
+pre {
+  margin: 1em;
+  padding: 1em;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }

@@ -7,15 +7,19 @@
     <link href="../../css/reset.css" rel="stylesheet" />
     <link href="../../css/style.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="sketch.js"></script>
     <title>テク単 | テンプレ</title>
   </head>
   <body>
     <div id="canvas"></div>
-    <pre>
-      <code>
-        print(Hello, tech-tan!)
-      </code>
-    </pre>
+    <pre><code>print(Hello, tech-tan!)</code></pre>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
   </body>
 </html>
