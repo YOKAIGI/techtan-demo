@@ -9,6 +9,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -18,6 +22,13 @@
   <body>
     <div id="canvas"></div>
     <pre><code>print(Hello, tech-tan!)</code></pre>
+
+    <div class="bottom-bar">
+      <button type="button" onclick="handleReload()">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
+    </div>
+
     <script>
       hljs.initHighlightingOnLoad();
     </script>

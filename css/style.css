@@ -1,11 +1,42 @@
+body {
+  padding-bottom: 4em;
+}
+
 #canvas {
-  width: 100vw;
   height: 100vw;
+  width: 100vw;
 }
 
 pre {
   margin: 1em;
-  padding: 1em;
   overflow-x: auto;
+  padding: 1em;
   -webkit-overflow-scrolling: touch;
+}
+
+.bottom-bar {
+  background-color: rgba(49, 61, 190, 0.8);
+  bottom: 0;
+  padding: 0.6em;
+  position: fixed;
+  text-align: end;
+  width: 100%;
+}
+
+.bottom-bar button {
+  background-color: #313dbe;
+  border-radius: 0.2em;
+  display: inline-block;
+  font-size: 2em;
+  height: 1.6em;
+  text-align: center;
+  width: 1.6em;
+}
+
+.bottom-bar button:active {
+  opacity: 0.6;
+}
+
+.bottom-bar button i {
+  color: white;
 }
