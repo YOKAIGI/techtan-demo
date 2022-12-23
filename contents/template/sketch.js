@@ -1,5 +1,12 @@
+let isPlaying = false;
+
+function handlePlay() {
+  isPlaying = !isPlaying;
+  console.log("Playing Button Clicked!");
+}
+
 function handleReload() {
-  console.log("Clicked!");
+  console.log("Reload Button Clicked!");
 }
 
 function setup() {

@@ -14,6 +14,10 @@ pre {
   -webkit-overflow-scrolling: touch;
 }
 
+code {
+  font-size: 1.2em;
+}
+
 .bottom-bar {
   background-color: rgba(49, 61, 190, 0.8);
   bottom: 0;
@@ -29,6 +33,7 @@ pre {
   display: inline-block;
   font-size: 2em;
   height: 1.6em;
+  margin-inline-start: 0.4em;
   text-align: center;
   width: 1.6em;
 }
