@@ -3,14 +3,17 @@ let lightColor = "RED";
 let playerSpeed = 0;
 let playerPosition = 0;
 
+let walkingImg;
+let standingImg;
+
 let red = {
-  on: "#ff0000",
-  off: "#990000",
+  on: "#CE392B",
+  off: "#881C0F",
 };
 
 let blue = {
-  on: "#0000ff",
-  off: "#000099",
+  on: "#009993",
+  off: "#00615D",
 };
 
 let redLight;
@@ -39,6 +42,11 @@ function handleReload() {
   console.log("Reload Button Clicked!");
 }
 
+function preload() {
+  standingImg = loadImage("assets/standing.png");
+  walkingImg = loadImage("assets/walking.png");
+}
+
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
@@ -57,9 +65,9 @@ function setup() {
 }
 
 function draw() {
-  background("#a0d8ef");
+  background("#48B0D2");
 
-  fill("#c2c2c2");
+  fill("#B7CDDA");
   push();
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = 2;
@@ -79,7 +87,12 @@ function draw() {
 
   fill("#00ff00");
   playerPosition = playerPosition + playerSpeed;
-  rect(playerPosition, height - 40, 20, 40);
+  if (lightColor == "RED") {
+    image(standingImg, 0, 0);
+  } else {
+    image(walkingImg, 0, 0);
+  }
+  // rect(playerPosition, height - 40, 20, 40);
 }
 
 function touchEnded() {

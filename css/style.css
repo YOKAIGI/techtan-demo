@@ -19,7 +19,7 @@ code {
 }
 
 .bottom-bar {
-  background-color: rgba(49, 61, 190, 0.8);
+  background-color: #066292;
   bottom: 0;
   padding: 0.6em;
   position: fixed;
@@ -28,7 +28,7 @@ code {
 }
 
 .bottom-bar button {
-  background-color: #313dbe;
+  background-color: #01507a;
   border-radius: 0.2em;
   display: inline-block;
   font-size: 2em;
