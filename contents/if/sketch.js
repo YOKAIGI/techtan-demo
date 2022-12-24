@@ -5,21 +5,21 @@ let playerPosition = 0;
 
 let red = {
   on: "#ff0000",
-  off: "#bb0000",
+  off: "#990000",
 };
 
 let blue = {
   on: "#0000ff",
-  off: "#0000bb",
+  off: "#000099",
 };
 
 let redLight;
 let blueLight;
 
 function setCode(lightColor) {
-  const code = `light_color = "${lightColor}"
+  const code = `light_color = '${lightColor}'
   
-if light_color == "RED":
+if light_color == 'RED':
   player_speed = 0
 else:
   player_speed = 2`;
@@ -43,8 +43,15 @@ function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
 
-  redLight = new Light((width * 3) / 4, (height * 2) / 7, "RED", red);
-  blueLight = new Light((width * 3) / 4, (height * 4) / 7, "BLUE", blue);
+  noStroke();
+
+  redLight = new Light((width * 5) / 6 - 10, (height * 1) / 6 + 10, "RED", red);
+  blueLight = new Light(
+    (width * 5) / 6 - 10,
+    (height * 1) / 2 - 10,
+    "BLUE",
+    blue
+  );
 
   setCode(lightColor);
 }
@@ -52,6 +59,21 @@ function setup() {
 function draw() {
   background("#a0d8ef");
 
+  fill("#c2c2c2");
+  push();
+  drawingContext.shadowOffsetX = 2;
+  drawingContext.shadowOffsetY = 2;
+  drawingContext.shadowBlur = 10;
+  drawingContext.shadowColor = "#222";
+  rect((width * 5) / 6 - 20, width / 2, 20, width / 2);
+  rect(
+    (width * 2) / 3 - 10,
+    10,
+    (width * 1) / 3,
+    (height * 2) / 3 - 20,
+    (width * 1) / 3
+  );
+  pop();
   redLight.draw();
   blueLight.draw();
 

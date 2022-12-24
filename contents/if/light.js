@@ -5,7 +5,7 @@ class Light {
     this.colorName = colorName;
     this.on = colorCode.on;
     this.off = colorCode.off;
-    this.radius = 50;
+    this.radius = (1 / 9) * width;
   }
 
   draw() {
