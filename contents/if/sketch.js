@@ -50,7 +50,7 @@ function setup() {
 }
 
 function draw() {
-  background("#c9c9c9");
+  background("#a0d8ef");
 
   redLight.draw();
   blueLight.draw();
