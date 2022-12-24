@@ -17,7 +17,7 @@ class Light {
   }
 
   onClick() {
-    if (dist(touches[0].x, touches[0].y, this.x, this.y) < this.radius) {
+    if (dist(mouseX, mouseY, this.x, this.y) < this.radius) {
       lightColor = this.color;
 
       if (lightColor == "RED") {
@@ -25,6 +25,8 @@ class Light {
       } else if (lightColor == "BLUE") {
         playerSpeed = 2;
       }
+
+      setCode(lightColor);
     }
   }
 }
