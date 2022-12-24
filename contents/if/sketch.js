@@ -1,4 +1,4 @@
-let isPlaying = false;
+let isPlaying = true;
 let lightColor = "RED";
 let playerSpeed = 0;
 let playerPosition = 10;
