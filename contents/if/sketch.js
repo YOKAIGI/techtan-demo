@@ -1,18 +1,18 @@
 let isPlaying = false;
 let lightColor = "RED";
 let playerSpeed = 0;
-let playerPosition = 0;
+let playerPosition = 10;
 
-let walkingImg;
 let standingImg;
+let walkingImg;
 
 let red = {
-  on: "#CE392B",
+  on: "#dd0000",
   off: "#881C0F",
 };
 
 let blue = {
-  on: "#009993",
+  on: "#00bbb4",
   off: "#00615D",
 };
 
@@ -38,7 +38,7 @@ function handlePlay() {
 function handleReload() {
   lightColor = "RED";
   playerSpeed = 0;
-  playerPosition = 0;
+  playerPosition = 10;
   console.log("Reload Button Clicked!");
 }
 
@@ -88,11 +88,22 @@ function draw() {
   fill("#00ff00");
   playerPosition = playerPosition + playerSpeed;
   if (lightColor == "RED") {
-    image(standingImg, 0, 0);
+    image(
+      standingImg,
+      playerPosition,
+      (height * 2) / 3,
+      (standingImg.width * height) / (standingImg.height * 3),
+      (height * 1) / 3
+    );
   } else {
-    image(walkingImg, 0, 0);
+    image(
+      walkingImg,
+      playerPosition,
+      (height * 2) / 3,
+      (walkingImg.width * height) / (walkingImg.height * 3),
+      (height * 1) / 3
+    );
   }
-  // rect(playerPosition, height - 40, 20, 40);
 }
 
 function touchEnded() {
