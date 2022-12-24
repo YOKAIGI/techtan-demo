@@ -50,7 +50,7 @@ function draw() {
   rect(playerPosition, height - 40, 20, 40);
 }
 
-function touchMoved() {
+function touchEnded() {
   redLight.onClick();
   blueLight.onClick();
 }
