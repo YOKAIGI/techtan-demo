@@ -75,7 +75,7 @@ function draw() {
   background("#48B0D2");
 
   stroke("#000000");
-  strokeWeight(2);
+  strokeWeight(3);
   fill("#B5CAD7");
   rect((width * 5) / 6 - 12, width / 2, 16, width);
 
