@@ -5,6 +5,7 @@ let playerPosition = 10;
 
 let standingImg;
 let walkingImg;
+let lightImg;
 
 let red = {
   on: "#dd0000",
@@ -52,17 +53,16 @@ function handleReload() {
 function preload() {
   standingImg = loadImage("assets/standing.png");
   walkingImg = loadImage("assets/walking.png");
+  lightImg = loadImage("assets/light.png");
 }
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
 
-  noStroke();
-
-  redLight = new Light((width * 5) / 6 - 10, (height * 1) / 6 + 10, "RED", red);
+  redLight = new Light((width * 5) / 6 - 8, (height * 1) / 6 + 10, "RED", red);
   blueLight = new Light(
-    (width * 5) / 6 - 10,
+    (width * 5) / 6 - 8,
     (height * 1) / 2 - 10,
     "BLUE",
     blue
@@ -74,21 +74,20 @@ function setup() {
 function draw() {
   background("#48B0D2");
 
-  fill("#B7CDDA");
-  push();
-  drawingContext.shadowOffsetX = 2;
-  drawingContext.shadowOffsetY = 2;
-  drawingContext.shadowBlur = 10;
-  drawingContext.shadowColor = "#222";
-  rect((width * 5) / 6 - 20, width / 2, 20, width / 2);
-  rect(
+  stroke("#000000");
+  strokeWeight(2);
+  fill("#B5CAD7");
+  rect((width * 5) / 6 - 12, width / 2, 16, width);
+
+  image(
+    lightImg,
     (width * 2) / 3 - 10,
     10,
     (width * 1) / 3,
-    (height * 2) / 3 - 20,
-    (width * 1) / 3
+    (height * 2) / 3 - 20
   );
-  pop();
+
+  noStroke();
   redLight.draw();
   blueLight.draw();
 
