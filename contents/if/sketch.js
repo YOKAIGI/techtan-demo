@@ -3,6 +3,16 @@ let lightColor = "RED";
 let playerSpeed = 0;
 let playerPosition = 0;
 
+let red = {
+  on: "#ff0000",
+  off: "#bb0000",
+};
+
+let blue = {
+  on: "#0000ff",
+  off: "#0000bb",
+};
+
 let redLight;
 let blueLight;
 
@@ -33,8 +43,8 @@ function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
 
-  redLight = new Light(width / 2, (height * 1) / 4, "RED");
-  blueLight = new Light(width / 2, (height * 3) / 4, "BLUE");
+  redLight = new Light((width * 3) / 4, (height * 2) / 7, "RED", red);
+  blueLight = new Light((width * 3) / 4, (height * 4) / 7, "BLUE", blue);
 
   setCode(lightColor);
 }
