@@ -32,6 +32,13 @@ else:
 
 function handlePlay() {
   isPlaying = !isPlaying;
+
+  document.querySelector(".playing-button").children[0].className = isPlaying
+    ? "fa-solid fa-pause"
+    : "fa-solid fa-play";
+
+  console.log(document.querySelector(".playing-button"));
+
   console.log("Playing Button Clicked!");
 }
 
@@ -85,8 +92,9 @@ function draw() {
   redLight.draw();
   blueLight.draw();
 
-  fill("#00ff00");
-  playerPosition = playerPosition + playerSpeed;
+  if (isPlaying) {
+    playerPosition = playerPosition + playerSpeed;
+  }
   if (lightColor == "RED") {
     image(
       standingImg,
