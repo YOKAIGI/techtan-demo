@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link href="../../css/reset.css" rel="stylesheet" />
@@ -39,5 +39,25 @@
         <i class="fa-solid fa-pause"></i>
       </button>
     </div>
+
+    <dialog>
+      <p>信号機をタップしよう！</p>
+      <button class="ok-button">OK</button>
+    </dialog>
+
+    <script>
+      const dialog = document.querySelector("dialog");
+      const okButton = document.querySelector(".ok-button");
+      okButton.addEventListener(
+        "click",
+        function () {
+          dialog.close();
+        },
+        false
+      );
+      window.addEventListener("load", function () {
+        dialog.showModal();
+      });
+    </script>
   </body>
 </html>

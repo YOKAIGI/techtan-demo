@@ -1,6 +1,6 @@
 body {
   padding-top: 4.5em;
-  font-family: "Sawarabi Gothic", sans-serif;
+  font-family: "M PLUS 1p", sans-serif;
 }
 
 #canvas {
@@ -31,10 +31,6 @@ code {
   line-height: 1.8em;
 }
 
-/* .sub-title {
-  font-size: 0.8em;
-} */
-
 .bottom-bar {
   bottom: 0;
   padding: 1em 1.5em;
@@ -60,4 +56,24 @@ code {
 
 .bottom-bar button i {
   color: white;
+}
+
+dialog {
+  position: relative;
+  height: 4em;
+  padding: 1em;
+  border: 0;
+  box-shadow: 0 1.9px 2.5px rgba(0, 0, 0, 0.057),
+    0 5px 6.1px rgba(0, 0, 0, 0.076), 0 10.1px 11.4px rgba(0, 0, 0, 0.086),
+    0 19.2px 19.8px rgba(0, 0, 0, 0.092), 0 38.4px 34.8px rgba(0, 0, 0, 0.1),
+    0 101px 74px rgba(0, 0, 0, 0.13);
+  font-size: 1.2em;
+}
+
+dialog .ok-button {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  color: #066292;
+  font-weight: 700;
 }
