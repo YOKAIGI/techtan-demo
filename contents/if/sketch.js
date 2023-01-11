@@ -6,6 +6,7 @@ let playerPosition = 10;
 let standingImg;
 let walkingImg;
 let lightImg;
+let arrowImg;
 
 let red = {
   on: "#dd0000",
@@ -54,6 +55,7 @@ function preload() {
   standingImg = loadImage("assets/standing.png");
   walkingImg = loadImage("assets/walking.png");
   lightImg = loadImage("assets/light.png");
+  arrowImg = loadImage("assets/arrow_right.svg");
 }
 
 function setup() {
@@ -102,6 +104,7 @@ function draw() {
       (standingImg.width * height) / (standingImg.height * 3),
       (height * 1) / 3
     );
+    image(arrowImg, width / 2, (height * 1) / 2 - 10 - 24, 48, 48);
   } else {
     image(
       walkingImg,
@@ -110,6 +113,7 @@ function draw() {
       (walkingImg.width * height) / (walkingImg.height * 3),
       (height * 1) / 3
     );
+    image(arrowImg, width / 2, (height * 1) / 6 + 10 - 24, 48, 48);
   }
 }
 
