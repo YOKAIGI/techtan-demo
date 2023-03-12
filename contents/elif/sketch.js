@@ -1,5 +1,5 @@
-function setCode(lightColor) {
-  const code = `light_color = '${lightColor}'
+function setCode() {
+  const code = `light_color = '赤'
 
 # 信号が赤の時
 if color == '赤':
@@ -22,7 +22,7 @@ function preload() {}
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
-  setCode(lightColor);
+  setCode();
 }
 
 function draw() {
