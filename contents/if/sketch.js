@@ -32,18 +32,6 @@ else:
   hljs.initHighlightingOnLoad();
 }
 
-function handlePlay() {
-  isPlaying = !isPlaying;
-
-  document.querySelector(".playing-button").children[0].className = isPlaying
-    ? "fa-solid fa-pause"
-    : "fa-solid fa-play";
-
-  console.log(document.querySelector(".playing-button"));
-
-  console.log("Playing Button Clicked!");
-}
-
 function handleReload() {
   lightColor = "RED";
   playerSpeed = 0;
