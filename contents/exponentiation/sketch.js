@@ -1,10 +1,12 @@
-function setCode(lightColor) {
-  const code = `light_color = '${lightColor}'
-  
-if light_color == 'RED':
-  player_speed = 0
-else:
-  player_speed = 2`;
+function setCode() {
+  const code = `# 一辺の長さ
+side_length = 5
+
+# 正方形の面積
+square_area = side_length ** 2
+
+# 立方体の体積
+cube_volume = side_length ** 3`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
 }
@@ -18,7 +20,7 @@ function preload() {}
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
-  setCode(lightColor);
+  setCode();
 }
 
 function draw() {

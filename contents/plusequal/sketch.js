@@ -1,10 +1,12 @@
-function setCode(lightColor) {
-  const code = `light_color = '${lightColor}'
-  
-if light_color == 'RED':
-  player_speed = 0
-else:
-  player_speed = 2`;
+function setCode() {
+  const code = `# 回復魔法
+def healing():
+  hp += 10
+  mp -= 2
+
+# 攻撃
+def attack():
+  enemy_hp -= 10`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
 }
@@ -18,7 +20,7 @@ function preload() {}
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
-  setCode(lightColor);
+  setCode();
 }
 
 function draw() {

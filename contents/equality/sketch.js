@@ -1,10 +1,14 @@
-function setCode(lightColor) {
-  const code = `light_color = '${lightColor}'
-  
-if light_color == 'RED':
-  player_speed = 0
-else:
-  player_speed = 2`;
+function setCode() {
+  const code = `# 犯人の顔
+criminal_face = 'XXX'
+
+# 容疑者の顔
+suspect_face = input('犯人はお前か！')
+
+if criminal_face == suspect_face:
+  print('成功')
+else: 
+  print('失敗')`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
 }
@@ -18,7 +22,7 @@ function preload() {}
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
-  setCode(lightColor);
+  setCode();
 }
 
 function draw() {

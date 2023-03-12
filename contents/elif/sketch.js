@@ -1,10 +1,14 @@
 function setCode(lightColor) {
   const code = `light_color = '${lightColor}'
-  
-if light_color == 'RED':
-  player_speed = 0
+
+# 信号が赤の時
+if color == '赤':
+  stop() # 止まる
+elif color == '黄色':
+  run() # 走る
+# 信号が青の時
 else:
-  player_speed = 2`;
+  walk() # 歩く`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
 }

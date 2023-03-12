@@ -1,10 +1,9 @@
-function setCode(lightColor) {
-  const code = `light_color = '${lightColor}'
-  
-if light_color == 'RED':
-  player_speed = 0
-else:
-  player_speed = 2`;
+function setCode() {
+  const code = `# 好きな言葉を入力する
+message = input('ｺﾝﾆﾁﾊ')
+
+# 入力した言葉を表示する
+print(message)`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
 }
@@ -18,7 +17,7 @@ function preload() {}
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
-  setCode(lightColor);
+  setCode();
 }
 
 function draw() {

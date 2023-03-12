@@ -1,10 +1,13 @@
-function setCode(lightColor) {
-  const code = `light_color = '${lightColor}'
+function setCode() {
+  const code = `# 好きな数字を入力する
+number1 = input()
+number2 = input()
   
-if light_color == 'RED':
-  player_speed = 0
-else:
-  player_speed = 2`;
+# 計算
+result = number1 + number2
+  
+# 計算結果を表示する
+print(result)`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
 }
@@ -18,7 +21,7 @@ function preload() {}
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
-  setCode(lightColor);
+  setCode();
 }
 
 function draw() {
