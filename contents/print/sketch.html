@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../../css/reset.css" rel="stylesheet" />
     <link href="../../css/style.css" rel="stylesheet" />
+    <link href="sketch.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
     <link
       rel="stylesheet"
@@ -21,7 +22,18 @@
   </head>
   <body>
     <div class="top-bar">print</div>
-    <div id="canvas"></div>
+    <div id="canvas">
+      <form class="form">
+        <input
+          type="text"
+          name="message"
+          id="message"
+          placeholder="ｺﾝﾆﾁﾊ"
+          required
+        />
+        <button type="button" onclick="console.log('あああ')">送信！</button>
+      </form>
+    </div>
     <pre><code class="python"></code></pre>
 
     <div class="bottom-bar">
@@ -31,7 +43,7 @@
     </div>
 
     <dialog>
-      <p>XX</p>
+      <p>メッセージを送信しよう！</p>
       <button class="ok-button">OK</button>
     </dialog>
 

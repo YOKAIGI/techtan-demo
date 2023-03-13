@@ -40,7 +40,7 @@ function drawParakeet() {
   image(
     parakeetImg,
     width * (3 / 4),
-    height * (3 / 4),
+    height * (3 / 5),
     parakeetImgWidth,
     parakeetImg.height * (parakeetImgWidth / parakeetImg.width)
   );
