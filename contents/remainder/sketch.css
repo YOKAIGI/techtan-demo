@@ -1,0 +1,20 @@
+#canvas {
+  position: relative;
+}
+
+#canvas button {
+  position: absolute;
+  padding: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #066292;
+  color: white;
+  border-radius: 0.6em;
+}
+
+#canvas button:active {
+  opacity: 0.6;
+}

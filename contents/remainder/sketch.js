@@ -21,6 +21,7 @@ function draw() {
   background("#48B0D2");
 
   drawDishes();
+  drawGyoza();
 }
 
 const setCode = () => {
@@ -41,6 +42,10 @@ rest_gyoza_count = gyoza_count % people_count`;
 
 const handleReload = () => {
   isDivided = false;
+};
+
+const handleDivide = () => {
+  isDivided = true;
 };
 
 const drawDishes = () => {
@@ -74,4 +79,19 @@ const drawDishes = () => {
     dishImgWidth,
     dishImg.height * (dishImgWidth / dishImg.width)
   );
+};
+
+const drawGyoza = () => {
+  const gyozaImgWidth = width / 8.5;
+  if (!isDivided) {
+    for (let i = 0; i < 7; i++) {
+      image(
+        gyozaImg,
+        width * ((i + 1) / 8.5),
+        height / 4,
+        gyozaImgWidth,
+        gyozaImg.height * (gyozaImgWidth / gyozaImg.width)
+      );
+    }
+  }
 };
