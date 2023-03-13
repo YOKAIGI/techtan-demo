@@ -9,14 +9,14 @@ class Light {
   }
 
   draw() {
-    if (this.colorName == "RED") {
-      if (lightColor == "RED") {
+    if (this.colorName == "赤") {
+      if (lightColor == "赤") {
         fill(this.on);
       } else {
         fill(this.off);
       }
-    } else if (this.colorName == "BLUE") {
-      if (lightColor == "BLUE") {
+    } else if (this.colorName == "青") {
+      if (lightColor == "青") {
         fill(this.on);
       } else {
         fill(this.off);
@@ -30,9 +30,9 @@ class Light {
     if (dist(mouseX, mouseY, this.x, this.y) < this.radius) {
       lightColor = this.colorName;
 
-      if (lightColor == "RED") {
+      if (lightColor == "赤") {
         playerSpeed = 0;
-      } else if (lightColor == "BLUE") {
+      } else if (lightColor == "青") {
         playerSpeed = 2;
       }
 

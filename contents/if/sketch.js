@@ -1,5 +1,5 @@
 let isPlaying = true;
-let lightColor = "RED";
+let lightColor = "赤";
 let playerSpeed = 0;
 let playerPosition = 10;
 
@@ -35,7 +35,7 @@ else:
 }
 
 function handleReload() {
-  lightColor = "RED";
+  lightColor = "赤";
   playerSpeed = 0;
   playerPosition = 10;
   console.log("Reload Button Clicked!");
@@ -52,13 +52,8 @@ function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
 
-  redLight = new Light((width * 5) / 6 - 8, (height * 1) / 6 + 10, "RED", red);
-  blueLight = new Light(
-    (width * 5) / 6 - 8,
-    (height * 1) / 2 - 10,
-    "BLUE",
-    blue
-  );
+  redLight = new Light((width * 5) / 6 - 8, (height * 1) / 6 + 10, "赤", red);
+  blueLight = new Light((width * 5) / 6 - 8, (height * 1) / 2 - 10, "青", blue);
 
   setCode(lightColor);
 }
@@ -86,7 +81,7 @@ function draw() {
   if (isPlaying) {
     playerPosition = playerPosition + playerSpeed;
   }
-  if (lightColor == "RED") {
+  if (lightColor == "赤") {
     image(
       standingImg,
       playerPosition,

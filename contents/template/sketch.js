@@ -1,7 +1,7 @@
 function setCode(lightColor) {
   const code = `light_color = '${lightColor}'
   
-if light_color == 'RED':
+if light_color == '赤':
   player_speed = 0
 else:
   player_speed = 2`;
