@@ -1,10 +1,11 @@
 let parakeetImg;
-let balloon;
-let isSubmitted;
+let balloonImg;
+let isSubmitted = false;
+let message = "";
 
 function setCode() {
   const code = `# 好きな言葉を入力する
-message = input('ｺﾝﾆﾁﾊ')
+message = input('ﾅﾆｶ ｶｲﾃﾐﾖｳ')
 
 # 入力した言葉を表示する
 print(message)`;
@@ -13,7 +14,19 @@ print(message)`;
 }
 
 function handleReload() {
-  console.log("Reload Button Clicked!");
+  isSubmitted = false;
+  message = "";
+  document.querySelector(".form input[type='text']").value = message;
+}
+
+function handleSubmit() {
+  message = document.querySelector(".form input[type='text']").value;
+
+  if (!message) {
+    message = "メッセージを入力してﾋﾟﾖ";
+  }
+
+  isSubmitted = true;
 }
 
 function preload() {
@@ -25,13 +38,20 @@ function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
   setCode();
+  imageMode(CENTER);
+  textAlign(CENTER);
+  textSize(18);
+  textStyle(BOLD);
 }
 
 function draw() {
   background("#48B0D2");
-  imageMode(CENTER);
 
-  drawBalloon();
+  if (isSubmitted) {
+    drawBalloon();
+    drawMessage();
+  }
+
   drawParakeet();
 }
 
@@ -55,4 +75,9 @@ function drawBalloon() {
     balloonImgWidth,
     balloonImg.height * (balloonImgWidth / balloonImg.width)
   );
+}
+
+function drawMessage() {
+  fill(34, 34, 34);
+  text(message, width * (2 / 5), height * (1 / 3));
 }
