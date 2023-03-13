@@ -1,6 +1,7 @@
 let criminal = "";
 
 let wantedImg;
+let balloonImg;
 
 let dogImg;
 let dogImgWidth;
@@ -15,8 +16,8 @@ let rabbitImgWidth;
 let rabbitBlackImg;
 
 function preload() {
-  // TODO: 画像を差し替える
   wantedImg = loadImage("assets/wanted.png");
+  balloonImg = loadImage("assets/balloon.png");
   dogImg = loadImage("assets/dog.png");
   dogBlackImg = loadImage("assets/dog_black.png");
   catImg = loadImage("assets/cat.png");
@@ -29,6 +30,9 @@ function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
   imageMode(CENTER);
+  textAlign(CENTER);
+  textSize(30);
+  textStyle(BOLD);
 
   dogImgWidth = dogImg.width * 0.8;
   catImgWidth = catImg.width * 0.8;
@@ -40,6 +44,7 @@ function draw() {
   setCode();
 
   drawWanted();
+  drawBalloon();
   drawDog();
   drawCat();
   drawRabbit();
@@ -62,7 +67,7 @@ else:
 };
 
 const handleReload = () => {
-  console.log("Reload Button Clicked!");
+  criminal = "";
 };
 
 const drawWanted = () => {
@@ -73,6 +78,40 @@ const drawWanted = () => {
     width / 2,
     wantedImg.height * (width / 2 / wantedImg.width)
   );
+};
+
+const drawBalloon = () => {
+  if (criminal == "dog") {
+    image(
+      balloonImg,
+      width / 6,
+      height * (3 / 8),
+      dogImgWidth,
+      balloonImg.height * (dogImgWidth / balloonImg.width)
+    );
+    fill("#f00");
+    text("!=", width / 6, height * (3 / 8) * 1.05);
+  } else if (criminal == "cat") {
+    image(
+      balloonImg,
+      width / 2,
+      height * (3 / 8),
+      catImgWidth,
+      balloonImg.height * (catImgWidth / balloonImg.width)
+    );
+    fill("#f00");
+    text("!=", width / 2, height * (3 / 8) * 1.05);
+  } else if (criminal == "rabbit") {
+    image(
+      balloonImg,
+      width * (5 / 6),
+      height * (3 / 8),
+      rabbitImgWidth,
+      balloonImg.height * (rabbitImgWidth / balloonImg.width)
+    );
+    fill("#066292");
+    text("==", width * (5 / 6), height * (3 / 8) * 1.05);
+  }
 };
 
 const drawDog = () => {
@@ -136,12 +175,13 @@ const drawRabbit = () => {
 };
 
 const handleClick = () => {
-  if (abs(mouseX - width / 6) < dogImgWidth / 2) {
-    criminal = "dog";
-  } else if (abs(mouseX - width / 2) < catImgWidth / 2) {
-    criminal = "cat";
-  } else if (abs(mouseX - width * (5 / 6)) < rabbitImgWidth / 2) {
-    criminal = "rabbit";
+  if (mouseY < height && mouseY > 0) {
+    if (abs(mouseX - width / 6) < dogImgWidth / 2) {
+      criminal = "dog";
+    } else if (abs(mouseX - width / 2) < catImgWidth / 2) {
+      criminal = "cat";
+    } else if (abs(mouseX - width * (5 / 6)) < rabbitImgWidth / 2) {
+      criminal = "rabbit";
+    }
   }
-  console.log(criminal);
 };
