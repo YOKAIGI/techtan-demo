@@ -3,32 +3,6 @@ let balloonImg;
 let isSubmitted = false;
 let message = "";
 
-const setCode = () => {
-  const code = `# 好きな言葉を入力する
-message = input('ﾅﾆｶ ｶｲﾃﾐﾖｳ')
-
-# 入力した言葉を表示する
-print(message)`;
-  document.querySelector("code").innerHTML = code;
-  hljs.initHighlightingOnLoad();
-};
-
-const handleReload = () => {
-  isSubmitted = false;
-  message = "";
-  document.querySelector(".form input[type='text']").value = message;
-};
-
-const handleSubmit = () => {
-  message = document.querySelector(".form input[type='text']").value;
-
-  if (!message) {
-    message = "メッセージを入力してﾋﾟﾖ";
-  }
-
-  isSubmitted = true;
-};
-
 function preload() {
   parakeetImg = loadImage("assets/parakeet.png");
   balloonImg = loadImage("assets/balloon.png");
@@ -54,6 +28,32 @@ function draw() {
 
   drawParakeet();
 }
+
+const setCode = () => {
+  const code = `# 好きな言葉を入力する
+message = input('ﾅﾆｶ ｶｲﾃﾐﾖｳ')
+
+# 入力した言葉を表示する
+print(message)`;
+  document.querySelector("code").innerHTML = code;
+  hljs.initHighlightingOnLoad();
+};
+
+const handleReload = () => {
+  isSubmitted = false;
+  message = "";
+  document.querySelector(".form input[type='text']").value = message;
+};
+
+const handleSubmit = () => {
+  message = document.querySelector(".form input[type='text']").value;
+
+  if (!message) {
+    message = "メッセージを入力してﾋﾟﾖ";
+  }
+
+  isSubmitted = true;
+};
 
 const drawParakeet = () => {
   const parakeetImgWidth = width / 3;

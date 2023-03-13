@@ -21,26 +21,6 @@ const blue = {
 let redLight;
 let blueLight;
 
-const setCode = (lightColor) => {
-  const code = `light_color = '${lightColor}'
-
-if color == '赤':
-  stop() # 止まる
-
-# 信号が赤じゃない時
-else:
-  walk() # 歩く`;
-  document.querySelector("code").innerHTML = code;
-  hljs.initHighlightingOnLoad();
-};
-
-const handleReload = () => {
-  lightColor = "赤";
-  playerSpeed = 0;
-  playerPosition = 10;
-  console.log("Reload Button Clicked!");
-};
-
 function preload() {
   standingImg = loadImage("assets/standing.png");
   walkingImg = loadImage("assets/walking.png");
@@ -106,3 +86,23 @@ function touchEnded() {
   redLight.onClick();
   blueLight.onClick();
 }
+
+const setCode = (lightColor) => {
+  const code = `light_color = '${lightColor}'
+
+if color == '赤':
+  stop() # 止まる
+
+# 信号が赤じゃない時
+else:
+  walk() # 歩く`;
+  document.querySelector("code").innerHTML = code;
+  hljs.initHighlightingOnLoad();
+};
+
+const handleReload = () => {
+  lightColor = "赤";
+  playerSpeed = 0;
+  playerPosition = 10;
+  console.log("Reload Button Clicked!");
+};
