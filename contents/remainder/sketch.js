@@ -93,5 +93,29 @@ const drawGyoza = () => {
         gyozaImg.height * (gyozaImgWidth / gyozaImg.width)
       );
     }
+  } else {
+    image(
+      gyozaImg,
+      width * (1 / 8.5),
+      height / 4,
+      gyozaImgWidth,
+      gyozaImg.height * (gyozaImgWidth / gyozaImg.width)
+    );
+    for (let i = 0; i < 3; i++) {
+      image(
+        gyozaImg,
+        width * ((2 * i + 1) / 6) - gyozaImgWidth / 2,
+        height * (3 / 4),
+        gyozaImgWidth,
+        gyozaImg.height * (gyozaImgWidth / gyozaImg.width)
+      );
+      image(
+        gyozaImg,
+        width * ((2 * i + 1) / 6) + gyozaImgWidth / 2,
+        height * (3 / 4),
+        gyozaImgWidth,
+        gyozaImg.height * (gyozaImgWidth / gyozaImg.width)
+      );
+    }
   }
 };
