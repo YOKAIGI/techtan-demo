@@ -8,7 +8,7 @@ class Light {
     this.radius = (1 / 9) * width;
   }
 
-  draw() {
+  draw = () => {
     if (this.colorName == "赤") {
       if (lightColor == "赤") {
         fill(this.on);
@@ -24,9 +24,9 @@ class Light {
     }
 
     ellipse(this.x, this.y, this.radius * 2);
-  }
+  };
 
-  onClick() {
+  onClick = () => {
     if (dist(mouseX, mouseY, this.x, this.y) < this.radius) {
       lightColor = this.colorName;
 
@@ -38,5 +38,5 @@ class Light {
 
       setCode(lightColor);
     }
-  }
+  };
 }

@@ -8,12 +8,12 @@ let walkingImg;
 let lightImg;
 let arrowImg;
 
-let red = {
+const red = {
   on: "#dd0000",
   off: "#881C0F",
 };
 
-let blue = {
+const blue = {
   on: "#00bbb4",
   off: "#00615D",
 };
@@ -21,7 +21,7 @@ let blue = {
 let redLight;
 let blueLight;
 
-function setCode(lightColor) {
+const setCode = (lightColor) => {
   const code = `light_color = '${lightColor}'
 
 if color == '赤':
@@ -32,14 +32,14 @@ else:
   walk() # 歩く`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
-}
+};
 
-function handleReload() {
+const handleReload = () => {
   lightColor = "赤";
   playerSpeed = 0;
   playerPosition = 10;
   console.log("Reload Button Clicked!");
-}
+};
 
 function preload() {
   standingImg = loadImage("assets/standing.png");

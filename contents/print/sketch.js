@@ -3,7 +3,7 @@ let balloonImg;
 let isSubmitted = false;
 let message = "";
 
-function setCode() {
+const setCode = () => {
   const code = `# 好きな言葉を入力する
 message = input('ﾅﾆｶ ｶｲﾃﾐﾖｳ')
 
@@ -11,15 +11,15 @@ message = input('ﾅﾆｶ ｶｲﾃﾐﾖｳ')
 print(message)`;
   document.querySelector("code").innerHTML = code;
   hljs.initHighlightingOnLoad();
-}
+};
 
-function handleReload() {
+const handleReload = () => {
   isSubmitted = false;
   message = "";
   document.querySelector(".form input[type='text']").value = message;
-}
+};
 
-function handleSubmit() {
+const handleSubmit = () => {
   message = document.querySelector(".form input[type='text']").value;
 
   if (!message) {
@@ -27,7 +27,7 @@ function handleSubmit() {
   }
 
   isSubmitted = true;
-}
+};
 
 function preload() {
   parakeetImg = loadImage("assets/parakeet.png");
@@ -55,7 +55,7 @@ function draw() {
   drawParakeet();
 }
 
-function drawParakeet() {
+const drawParakeet = () => {
   const parakeetImgWidth = width / 3;
   image(
     parakeetImg,
@@ -64,9 +64,9 @@ function drawParakeet() {
     parakeetImgWidth,
     parakeetImg.height * (parakeetImgWidth / parakeetImg.width)
   );
-}
+};
 
-function drawBalloon() {
+const drawBalloon = () => {
   const balloonImgWidth = width * (2 / 3);
   image(
     balloonImg,
@@ -75,9 +75,9 @@ function drawBalloon() {
     balloonImgWidth,
     balloonImg.height * (balloonImgWidth / balloonImg.width)
   );
-}
+};
 
-function drawMessage() {
+const drawMessage = () => {
   fill(34, 34, 34);
   text(message, width * (2 / 5), height * (1 / 3));
-}
+};
