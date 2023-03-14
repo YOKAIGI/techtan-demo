@@ -36,7 +36,9 @@ def attack():
 };
 
 const handleReload = () => {
-  console.log("Reload Button Clicked!");
+  enemyHp = 100;
+  document.querySelector(".enemy-name").textContent = `スライムがあらわれた ▼`;
+  setEnemyHp();
 };
 
 const handleAttack = () => {
