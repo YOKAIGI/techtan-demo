@@ -1,30 +1,25 @@
-let hp = 100;
-let mp = 20;
-let enemyHp = 10;
+let enemyHp = 100;
 
 let slimeImg;
+let slimeDownImg;
 
 function preload() {
   slimeImg = loadImage("assets/slime.png");
+  slimeDownImg = loadImage("assets/slime_down.png");
 }
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
   setCode();
+  setEnemyHp();
   imageMode(CENTER);
 }
 
 function draw() {
-  background("#48B0D2");
+  background("#7DCD85");
 
-  image(
-    slimeImg,
-    width / 2,
-    height / 2,
-    width * 0.7,
-    slimeImg.height * ((width * 0.7) / slimeImg.width)
-  );
+  drawSlime();
 }
 
 const setCode = () => {
@@ -46,9 +41,43 @@ const handleReload = () => {
 
 const handleAttack = () => {
   enemyHp -= 10;
+  document.querySelector(".enemy-name").textContent = `スライムがあらわれた ▼`;
+  setEnemyHp();
 };
 
 const handleHealing = () => {
-  hp += 10;
-  mp -= 2;
+  enemyHp = 100;
+  setEnemyHp();
+  document.querySelector(".enemy-name").textContent = `こうげきしてごめんね ▼`;
+};
+
+const setEnemyHp = () => {
+  if (enemyHp > 0) {
+    document.querySelector(".enemy-hp").textContent = `HP: ${enemyHp}`;
+  } else {
+    document.querySelector(".enemy-hp").textContent = `HP: 0`;
+    document.querySelector(".enemy-name").textContent = `スライムを倒した！ ▼`;
+  }
+};
+
+const drawSlime = () => {
+  const slimeWidth = width * 0.6;
+
+  if (enemyHp > 0) {
+    image(
+      slimeImg,
+      width / 2,
+      height * (3 / 5),
+      slimeWidth,
+      slimeImg.height * (slimeWidth / slimeImg.width)
+    );
+  } else {
+    image(
+      slimeDownImg,
+      width / 2,
+      height * (3 / 5),
+      slimeWidth,
+      slimeImg.height * (slimeWidth / slimeImg.width)
+    );
+  }
 };
