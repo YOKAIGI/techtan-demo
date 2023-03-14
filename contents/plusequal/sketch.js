@@ -1,28 +1,54 @@
-function setCode() {
-  const code = `# 回復魔法
-def healing():
-  hp += 10
-  mp -= 2
+let hp = 100;
+let mp = 20;
+let enemyHp = 10;
 
-# 攻撃
-def attack():
-  enemy_hp -= 10`;
-  document.querySelector("code").innerHTML = code;
-  hljs.initHighlightingOnLoad();
+let slimeImg;
+
+function preload() {
+  slimeImg = loadImage("assets/slime.png");
 }
-
-function handleReload() {
-  console.log("Reload Button Clicked!");
-}
-
-function preload() {}
 
 function setup() {
   const canvas = createCanvas(windowWidth, windowWidth);
   canvas.parent("canvas");
   setCode();
+  imageMode(CENTER);
 }
 
 function draw() {
   background("#48B0D2");
+
+  image(
+    slimeImg,
+    width / 2,
+    height / 2,
+    width * 0.7,
+    slimeImg.height * ((width * 0.7) / slimeImg.width)
+  );
 }
+
+const setCode = () => {
+  const code = `# かいふく
+def healing():
+  hp += 10
+  mp -= 2
+
+# こうげき
+def attack():
+  enemy_hp -= 10`;
+  document.querySelector("code").innerHTML = code;
+  hljs.initHighlightingOnLoad();
+};
+
+const handleReload = () => {
+  console.log("Reload Button Clicked!");
+};
+
+const handleAttack = () => {
+  enemyHp -= 10;
+};
+
+const handleHealing = () => {
+  hp += 10;
+  mp -= 2;
+};

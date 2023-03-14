@@ -1,0 +1,33 @@
+#canvas {
+  position: relative;
+}
+
+.command-container {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.command-button {
+  flex: 1;
+  border: 2px solid white;
+  border-radius: 0.4em;
+  color: white;
+  padding: 0.5em 1em;
+  background-color: #222222;
+  font-weight: bold;
+}
+
+.command-button:active {
+  opacity: 0.5;
+}
+
+.enemy-hp {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #22222200;
+  font-size: large;
+}
